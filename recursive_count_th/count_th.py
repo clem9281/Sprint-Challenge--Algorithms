@@ -7,4 +7,11 @@ def count_th(word):
     
     # TBC
     
-    pass
+    counter = 0
+    if len(word) <= 1:
+        return counter
+    elif word[0] + word[1] == 'th':
+        counter = count_th(word[1:]) + 1
+    else:
+        counter = count_th(word[1:])
+    return counter
